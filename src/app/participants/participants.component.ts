@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Participant } from '../domain/participant';
+import { ParticipantsService } from '../services/participants.service';
 
 @Component({
   selector: 'app-participants',
@@ -9,18 +10,12 @@ import { Participant } from '../domain/participant';
 export class ParticipantsComponent implements OnInit {
 
   participants: Participant[];
+  @Output() societe: String;
 
-  constructor() { }
+  constructor(private _service: ParticipantsService) { } // Constructor injection
 
   ngOnInit() {
-    this.participants = [
-      {'numero': 'P1000', 'nom': 'Sami', 'age': 25},
-      {'numero': 'P2000', 'nom': 'Mahmoud', 'age': 30},
-      {'numero': 'P3000', 'nom': 'Zouheir', 'age': 28},
-      {'numero': 'P4000', 'nom': 'Houssem', 'age': 33},
-      {'numero': 'P5000', 'nom': 'Marwen', 'age': 17},
-      {'numero': 'P6000', 'nom': 'Ghada', 'age': 21}
-    ];
+    this.participants = this._service.getAll();
   }
 
 }

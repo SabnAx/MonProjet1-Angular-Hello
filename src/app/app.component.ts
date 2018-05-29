@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'BIAT';
+  // [societe]= 'BIAT';
   participants: string[] = ['Sami', 'Mahmoud', 'Zouheir', 'Houssem', 'Marwen', 'Ghada'];
 }
