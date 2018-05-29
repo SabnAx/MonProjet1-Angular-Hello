@@ -1,0 +1,35 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Learning Angular 6</h1>
+    <p class="lead">Bienvenue à la <span style="color:blue">BIAT</span> dans @Angular 6</p>
+    <hr class="my-2">
+  </div>
+</div>
+    <div class="card">
+      <div class="card-header  bg-primary text-white">
+        Liste des participants
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Numéro</th>
+              <th>Nom</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = 'let p of participants'>
+              <td scope="row">{{p.numero}}</td>
+              <td> {{p.nom}}</td>
+              <td> {{p.age}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        </div>
+    </div>
+
+
+
+
